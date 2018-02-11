@@ -26,6 +26,7 @@ public class SlaveCaller extends Thread {
                     ());
             ObjectInputStream objin = new ObjectInputStream(socket.getInputStream());
             response = objin.readObject();
+            Main.freeLists.set(slavePort-5002,1);
 
 
             String type = str.split("~~")[1];
